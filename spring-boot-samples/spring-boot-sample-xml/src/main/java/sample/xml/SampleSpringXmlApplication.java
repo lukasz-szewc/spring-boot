@@ -16,11 +16,12 @@
 
 package sample.xml;
 
-import sample.xml.service.HelloWorldService;
-
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import sample.xml.service.HelloWorldService;
 
 public class SampleSpringXmlApplication implements CommandLineRunner {
 
@@ -33,7 +34,14 @@ public class SampleSpringXmlApplication implements CommandLineRunner {
 	}
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run("classpath:/META-INF/application-context.xml", args);
-	}
+        String source = "classpath:/META-INF/application-context.xml";
+        Object[] sources = {source};
+        SpringApplication springApplication = new SpringApplication(sources);
+        ConfigurableApplicationContext context = springApplication.run(args);
+        String[] beanDefinitionNames = context.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            LoggerFactory.getLogger("beanName").warn(beanDefinitionName);
+        }
+    }
 
 }

@@ -102,7 +102,6 @@
 		<module>spring-boot-sample-war</module>
 		<module>spring-boot-sample-web-freemarker</module>
 		<module>spring-boot-sample-web-groovy-templates</module>
-		<module>spring-boot-sample-web-jsp</module>
 		<module>spring-boot-sample-web-method-security</module>
 		<module>spring-boot-sample-web-mustache</module>
 		<module>spring-boot-sample-web-secure</module>
@@ -118,6 +117,7 @@
 		<module>spring-boot-sample-websocket-undertow</module>
 		<module>spring-boot-sample-webservices</module>
 		-->
+		<module>spring-boot-sample-web-jsp</module>
 		<module>spring-boot-sample-xml</module>
 	</modules>
 	<!-- No dependencies - otherwise the samples won't work if you change the
