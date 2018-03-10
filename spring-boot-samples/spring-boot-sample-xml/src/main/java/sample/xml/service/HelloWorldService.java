@@ -25,8 +25,14 @@ public class HelloWorldService {
 	@Value("${name:World}")
 	private String name;
 
+	@Value("${com.bla}")
+	private String anotherProperty;
+
 	public String getHelloMessage() {
-		return "Hello " + this.name;
+		return "Hello " + this.name + " - " + anotherProperty;
 	}
 
+	public String getAnotherProperty() {
+		return anotherProperty;
+	}
 }
