@@ -28,7 +28,6 @@ public class AppCtxStart {
         springApplication.setBannerMode(Banner.Mode.OFF);
         ConfigurableApplicationContext context = springApplication.run(args);
         ConfigurableEnvironment environment = context.getEnvironment();
-
         context.stop();
     }
 
